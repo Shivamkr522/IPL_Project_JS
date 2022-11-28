@@ -22,20 +22,19 @@ function findNumberOfMatchesWinPerYear(results) {
         }
     }
     for (var j = 0; j < season.length; j++) {
-        var map = new Map();
+        var teamMatchesWon = new Map();
         for (var i = 0; i < results.length; i++) {
             let value = 1;
             if (season[j] === results[i].season) {
-                if (map.has(results[i].winner)) {
-                    value = map.get(results[i].winner) + 1;
-                    map.set(results[i].winner, value);
+                if (teamMatchesWon.has(results[i].winner)) {
+                    value = teamMatchesWon.get(results[i].winner) + 1;
+                    teamMatchesWon.set(results[i].winner, value);
                 }
-                else map.set(results[i].winner, value);
+                else teamMatchesWon.set(results[i].winner, value);
             }
         }
-        // console.log(map);
         let ref = season[j];
-        data.push(ref, Object.fromEntries(map));
+        data.push(ref, Object.fromEntries(teamMatchesWon));
     }
 
 
