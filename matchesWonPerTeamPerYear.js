@@ -8,7 +8,6 @@ const { finished } = require('stream');
 fs.createReadStream('data/matches.csv')
     .pipe(csv({})).on('data', (data) => matches.push(data))
     .on('end', () => {
-        //console.log(matches);
         findNumberOfMatchesWinPerYear(matches);
 
     });
