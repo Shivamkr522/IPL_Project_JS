@@ -1,9 +1,3 @@
-// let csvToJson = require('convert-csv-to-json');
-
-// let matchesInput = csvToJson.fieldDelimiter(',').getJsonFromCsv("data/matches.csv");
-
-
-
 const matches = [];
 const { Console } = require('console');
 const csv = require('csv-parser');
@@ -54,6 +48,5 @@ function findNumberOfMatchesWinPerYear(results) {
 
         console.log("File Uploaded");
     });
-    // console.log(data);
 }
 
